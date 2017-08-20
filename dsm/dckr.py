@@ -37,4 +37,4 @@ def get_ct_info(ct):
         "cpushares": ct.attrs['HostConfig']['CpuShares'],
         "status": ct.attrs['State']['Status'],
     }
-    return info()
+    return info
