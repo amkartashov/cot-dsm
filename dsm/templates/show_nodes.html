@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block body %}
+  <table class=nodes>
+    <tr><th>id</th><th>Hostname</th>
+        <th>Addr</th><th>State</th>
+        <th>Memory(Bytes)</th><th>NanoCPUs</th>
+        <th>Containers</th></tr>
+  	{% for node in nodes %}
+    	<tr>
+				<td>{{ node.ID }}</td>
+				<td>{{ node.Hostname }}</td>
+				<td>{{ node.Addr }}</td>
+				<td>{{ node.State }}</td>
+				<td>{{ node.MemoryBytes }}</td>
+				<td>{{ node.NanoCPUs }}</td>
+        <td>{{ node.ContainersRunning }} / {{ node.Containers }}</td>
+			</tr>
+  	{% endfor %}
+  </ul>
+{% endblock %}
+
