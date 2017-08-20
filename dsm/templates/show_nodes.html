@@ -4,10 +4,11 @@
     <tr><th>id</th><th>Hostname</th>
         <th>Addr</th><th>State</th>
         <th>Memory(Bytes)</th><th>NanoCPUs</th>
-        <th>Containers</th></tr>
+        <th>Containers (Running/All)</th></tr>
   	{% for node in nodes %}
     	<tr>
-				<td>{{ node.ID }}</td>
+        <td><a href={{ url_for('show_node', id=node.short_id) }}>
+            {{ node.short_id }}</a></td>
 				<td>{{ node.Hostname }}</td>
 				<td>{{ node.Addr }}</td>
 				<td>{{ node.State }}</td>

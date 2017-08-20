@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block body %}
+  <table class=containers>
+    <tr><th>id</th><th>Service</th>
+        <th>Task</th><th>Memory limit</th>
+        <th>IO weight</th><th>CPU share</th>
+        <th>Status</th></tr>
+  	{% for ct in containers %}
+    	<tr>
+        <td>{{ ct.short_id }}</td>
+				<td>{{ ct.service_name }}</td>
+				<td>{{ ct.task_name }}</td>
+				<td>{{ ct.mem_limit }}</td>
+				<td>{{ ct.ioweight }}</td>
+				<td>{{ ct.cpushares }}</td>
+        <td>{{ ct.status }}</td>
+			</tr>
+  	{% endfor %}
+  </ul>
+{% endblock %}
+
