@@ -21,7 +21,7 @@ def get_node_info(node):
         "State": node.attrs['Status']['State'],
         "EngineVersion": node.attrs['Description']['Engine']['EngineVersion'],
     }
-    nodedc = docker.DockerClient(base_url='tcp://' + info['Addr'] +':2375')
+    nodedc = docker.DockerClient(base_url='tcp://' + info['Hostname'] +':2375')
     info['Containers'] = nodedc.info()['Containers']
     info['ContainersRunning'] = nodedc.info()['ContainersRunning']
     return info
