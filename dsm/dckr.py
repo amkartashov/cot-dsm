@@ -7,7 +7,7 @@ def get_nodes():
 def get_containers(node_id):
     client = docker.from_env()
     node = client.nodes.get(node_id)
-    nodedc = docker.DockerClient(base_url='tcp://' + node.attrs['Status']['Addr'] +':2375')
+    nodedc = docker.DockerClient(base_url='tcp://' + node.attrs['Description']['Hostname'] +':2375')
     return [get_ct_info(ct) for ct in nodedc.containers.list()]
 
 def get_node_info(node):
